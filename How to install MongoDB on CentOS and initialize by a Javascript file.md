@@ -22,14 +22,14 @@ Insert the code below into mongodb-org-4.2.repo and save the file.
 Check the packages of RPM Repository and make sure "repo id: !mongodb-org-4.2/x, repo name: MongoDB Repository" is in the list.
 > sudo yum repolist
 
-> or
+or
 
 > sudo yum repolist all
 
 Install the latest stable version or specific version of MongoDB.
 > sudo yum install -y mongodb-org
 
-> or
+or
 
 > sudo yum install -y mongodb-org-4.2.0 mongodb-org-server-4.2.0 mongodb-org-shell-4.2.0 mongodb-org-mongos-4.2.0 mongodb-org-tools-4.2.0
 

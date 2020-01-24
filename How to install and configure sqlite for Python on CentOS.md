@@ -50,7 +50,7 @@ Insert the variable settings below into .bashrc.
 The new settings of .bashrc will be applied after logout and relogin centOS. Without relogin action, we can apply it immediately by the commands below.
 > source ~/.bashrc
 
-> or
+or
 
 > . ~/.bashrc
 
@@ -72,7 +72,7 @@ Insert the path into sqlite.conf.
 Load dynamic libraries into cache memory, and then list and check the libraries about sqlite.
 > ldconfig
 
-> or
+or
 
 > ldconfig -p | grep sqlite
 
@@ -88,7 +88,7 @@ Enter Python shell and check which version of sqlite is used.
 
 > \>\>\> sqlite3.sqlite_version
 
-> or
+or
 
 > python
 
