@@ -79,12 +79,12 @@ Enter the MongoDB shell.
 > sudo mongo
 
 In MongoDB shell, execute the initial file, check the result, and then exit the shell.
-> > load("/root/data/db/testscript.js")
-> > show dbs
-> > use mydatabase
-> > show users
-> > db.firstCollection.find()
-> > exit
+> \> load("/root/data/db/testscript.js")
+> \> show dbs
+> \> use mydatabase
+> \> show users
+> \> db.firstCollection.find()
+> \> exit
 
 
 ## Notice!

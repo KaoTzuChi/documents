@@ -72,12 +72,12 @@ Check installed version of sqlite. Additionally, we can just type "sqlite3" to e
 
 Enter Python shell and check which version of sqlite is used.
 > python
-> >>> import sqlite3
-> >>> sqlite3.sqlite_version
+> \>\>\> import sqlite3
+> \>\>\> sqlite3.sqlite_version
 > or
 > python
-> >>> from sqlite3 import dbapi2 as Database
-> >>> Database.sqlite_version_info
+> \>\>\> from sqlite3 import dbapi2 as Database
+> \>\>\> Database.sqlite_version_info
 
 
 ## References
