@@ -102,8 +102,10 @@ Anytime, before reboot the os, we need to smoothly stop mongo service.
 > sudo mongod --shutdown
 
 Otherwise, mongod will be locked and causes the error:
+
   _mongod forked process: 893_
   _ERROR: child process failed, exited with error number 100_
+
 Then we need to repair and restart mongo service.
 > sudo mongod --repair --dbpath=/data/db --port=27017 --logpath=/usr/log/mongodb.log --repairpath /tmp/mongodb
 
