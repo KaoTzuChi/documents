@@ -21,16 +21,21 @@ Insert the code below into mongodb-org-4.2.repo and save the file.
 
 Check the packages of RPM Repository and make sure "repo id: !mongodb-org-4.2/x, repo name: MongoDB Repository" is in the list.
 > sudo yum repolist
+
 > or
+
 > sudo yum repolist all
 
 Install the latest stable version or specific version of MongoDB.
 > sudo yum install -y mongodb-org
+
 > or
+
 > sudo yum install -y mongodb-org-4.2.0 mongodb-org-server-4.2.0 mongodb-org-shell-4.2.0 mongodb-org-mongos-4.2.0 mongodb-org-tools-4.2.0
 
 Now we can start MongoDB service and check its status.
 > sudo service mongod start
+
 > sudo service mongod status
 
 
@@ -80,10 +85,15 @@ Enter the MongoDB shell.
 
 In MongoDB shell, execute the initial file, check the result, and then exit the shell.
 > \> load("/root/data/db/testscript.js")
+
 > \> show dbs
+
 > \> use mydatabase
+
 > \> show users
+
 > \> db.firstCollection.find()
+
 > \> exit
 
 
@@ -96,6 +106,7 @@ Otherwise, mongod will be locked and causes the error:
   _ERROR: child process failed, exited with error number 100_
 Then we need to repair and restart mongo service.
 > sudo mongod --repair --dbpath=/data/db --port=27017 --logpath=/usr/log/mongodb.log --repairpath /tmp/mongodb
+
 > sudo systemctl restart mongod
 
 

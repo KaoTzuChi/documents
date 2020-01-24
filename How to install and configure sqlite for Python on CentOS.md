@@ -11,7 +11,9 @@ The installation of Python, wget and make please reference [here](http://www.tzu
 
 Download and decompress sqlite.
 > cd /home/download
+
 > wget http://www.sqlite.org/2019/sqlite-autoconf-3300100.tar.gz
+
 > tar xvfz sqlite-autoconf-3300100.tar.gz
 
 If the environment has existing sqlite, check the installed path. The result is normally "/usr/bin/sqlite3"
@@ -22,11 +24,14 @@ And then backup the existing sqlite.
 
 Install sqlite to specific path, this example assign the path to /usr/local/sqlite.
 > cd /home/download/sqlite-autoconf-3300100
+
 > ./configure prefix=/usr/local/sqlite
+
 > make && make install
 
 If the existing sqlite is backuped, make a symbolic link for the new installed sqlite.
 > cd /usr/local/sqlite/bin/
+
 > ln -s sqlite3 /usr/local/sqlite3
 
 
@@ -44,12 +49,16 @@ Insert the variable settings below into .bashrc.
 
 The new settings of .bashrc will be applied after logout and relogin centOS. Without relogin action, we can apply it immediately by the commands below.
 > source ~/.bashrc
+
 > or
+
 > . ~/.bashrc
 
 Check the settings of environmental variables.
 > echo $LD_LIBRARY_PATH
+
 > echo $LD_RUN_PATH
+
 > echo $PATH
 
 Create a .conf file for sqlite to set the library path.
@@ -62,7 +71,9 @@ Insert the path into sqlite.conf.
 
 Load dynamic libraries into cache memory, and then list and check the libraries about sqlite.
 > ldconfig
+
 > or
+
 > ldconfig -p | grep sqlite
 
 
@@ -72,11 +83,17 @@ Check installed version of sqlite. Additionally, we can just type "sqlite3" to e
 
 Enter Python shell and check which version of sqlite is used.
 > python
+
 > \>\>\> import sqlite3
+
 > \>\>\> sqlite3.sqlite_version
+
 > or
+
 > python
+
 > \>\>\> from sqlite3 import dbapi2 as Database
+
 > \>\>\> Database.sqlite_version_info
 
 
