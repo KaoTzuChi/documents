@@ -7,7 +7,7 @@
 
 ## Installation
 Create a .repo file so that we can install MongoDB directly using yum.
-> vi /etc/yum.repos.d/mongodb-org-4.2.repo
+> $ vi /etc/yum.repos.d/mongodb-org-4.2.repo
 
 Insert the code below into mongodb-org-4.2.repo and save the file.
 ```
@@ -20,33 +20,33 @@ Insert the code below into mongodb-org-4.2.repo and save the file.
 ```
 
 Check the packages of RPM Repository and make sure "repo id: !mongodb-org-4.2/x, repo name: MongoDB Repository" is in the list.
-> sudo yum repolist
+> $ yum repolist
 
 or
 
-> sudo yum repolist all
+> $ yum repolist all
 
 Install the latest stable version or specific version of MongoDB.
-> sudo yum install -y mongodb-org
+> $ yum install -y mongodb-org
 
 or
 
-> sudo yum install -y mongodb-org-4.2.0 mongodb-org-server-4.2.0 mongodb-org-shell-4.2.0 mongodb-org-mongos-4.2.0 mongodb-org-tools-4.2.0
+> $ yum install -y mongodb-org-4.2.0 mongodb-org-server-4.2.0 mongodb-org-shell-4.2.0 mongodb-org-mongos-4.2.0 mongodb-org-tools-4.2.0
 
 Now we can start MongoDB service and check its status.
-> sudo service mongod start
+> $ service mongod start
 
-> sudo service mongod status
+> $ service mongod status
 
 
 ## Configuration
 Assign the database path to MongoDB.
-> sudo mongod -dbpath ~/data/db
+> $ mongod -dbpath ~/data/db
 
 
 ## Execution and initialization
 Create a javascript file to initialize the database.
-> vi ~/data/db/testscript.js
+> $ vi ~/data/db/testscript.js
 
 Depends on the naming we need, modify the javascript code below, and then insert into testscript.js and save the file. It's used to create databases, users, user permissions, collections and documents.
 ```
@@ -80,10 +80,10 @@ try {
 } catch (e) { print ('<< Connection FAIL >>'+e); }
 ```
 
-Enter the MongoDB shell.
-> sudo mongo
+Enter the MongoDB shell. In MongoDB shell, execute the initial file, check the result, and then exit the shell.
 
-In MongoDB shell, execute the initial file, check the result, and then exit the shell.
+> $ mongo
+
 > \> load("/root/data/db/testscript.js")
 
 > \> show dbs
@@ -99,7 +99,7 @@ In MongoDB shell, execute the initial file, check the result, and then exit the 
 
 ## Notice!
 Anytime, before reboot the os, we need to smoothly stop mongo service.
-> sudo mongod --shutdown
+> $ mongod --shutdown
 
 Otherwise, mongod will be locked and causes the error:
 
@@ -107,16 +107,14 @@ Otherwise, mongod will be locked and causes the error:
   _ERROR: child process failed, exited with error number 100_
 
 Then we need to repair and restart mongo service.
-> sudo mongod --repair --dbpath=/data/db --port=27017 --logpath=/usr/log/mongodb.log --repairpath /tmp/mongodb
+> $ mongod --repair --dbpath=/data/db --port=27017 --logpath=/usr/log/mongodb.log --repairpath /tmp/mongodb
 
-> sudo systemctl restart mongod
+> $ systemctl restart mongod
 
 
 ## References
-- [See more topics in my website.](http://www.tzuchikao.com/en/notes/)
-- [Install MongoDB Community Edition on Red Hat or CentOS](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
-- [Manage mongod Processes](https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/)
-
-
+- [See more topics in my website](http://www.tzuchikao.com/en/notes/)
+- [Install MongoDB community edition on RedHat or CentOS](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
+- [Manage mongod processes](https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/)
 
 
