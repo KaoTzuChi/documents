@@ -1,7 +1,7 @@
-# How to install and configure sqlite for Python on CentOS
+# How to install and configure SQLite for Python on CentOS
 ## Version
 - Python 3.7.4
-- sqlite 3.30.1
+- SQLite 3.30.1
 - CentOS 7
 
 ## Installation

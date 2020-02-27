@@ -2,7 +2,7 @@
 ## Version
 - nvm 0.35.0
 - npm 6.12.0
-- node 12.13.0
+- Node 12.13.0
 - NGINX 1.17.5
 - CentOS 7
 

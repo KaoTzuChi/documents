@@ -3,8 +3,8 @@
 - Python 3.7.4
 - pip 19.3.1
 - virtulenv 16.7.6
-- django 2.2.3
-- uwsgi 2.0.18
+- Django 2.2.3
+- uWSGI 2.0.18
 - NGINX 1.17.5
 - CentOS 7
 

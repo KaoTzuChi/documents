@@ -3,7 +3,7 @@
 - Python 3.7.4
 - pip 19.3.1
 - virtulenv 16.7.6
-- django 2.2.3
+- Django 2.2.3
 - CentOS 7
 
 
